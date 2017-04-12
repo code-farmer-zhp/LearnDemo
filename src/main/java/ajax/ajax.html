@@ -1,0 +1,63 @@
+<html>
+<head>
+    <script>
+       /* request = new XMLHttpRequest();
+        request.onreadystatechange = function () {
+            /!**
+             * 表示XMLHttpRequest对象的状态：0：未初始化。对象已创建，未调用open；
+             1：open方法成功调用，但Send方法未调用；
+             2：send方法已经调用，尚未开始接受数据；
+             3：正在接受数据。Http响应头信息已经接受，但尚未接收完成；
+             4：完成，即响应数据接受完成。
+             *!/
+            if (request.readyState == 4) {
+                if (request.status == 200) {
+                    console.info(request.responseType);
+                    console.info(request.responseXML);
+                    console.info(request.responseText);
+                    //alert(request.responseXML);
+                }
+            }
+            if (request.readyState == 0) {
+                console.info("未初始化。对象已创建，未调用open");
+            }
+            if (request.readyState == 1) {
+                console.info("send方法已经调用，尚未开始接受数据");
+            }
+            if (request.readyState == 3) {
+                console.info("正在接受数据。Http响应头信息已经接受，但尚未接收完成")
+            }
+
+
+        };
+        var url = "http://localhost:8080/feiniufnapphealthcheckstatus.jsp";
+
+        //可以选择同步还是异步
+        request.open("GET", url, true);
+        request.send(null);
+
+        var global = this;
+        console.info(global == window);*/
+
+        //script标签解决跨域问题
+        //src:url(跨域地址)?参数列表n=值n&callback=callbackMethod
+        function callbackMethod(data){
+            console.info(data);
+        }
+        function createScript(src) {
+            var element = document.createElement("script");
+            element.src = src;
+            element.language = "javascript";
+            element.type = "text/javascript";
+
+            document.head.appendChild(element);
+        }
+
+        createScript("http://abc.beta1.fn:8080/feiniufnapphealthcheckstatus.jsp?callback=callbackMethod");
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

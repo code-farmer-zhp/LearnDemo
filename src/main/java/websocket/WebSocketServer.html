@@ -1,0 +1,52 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    netty webSocket
+    <script>
+        var socket;
+        if (!window.WebSocket) {
+            window.WebSocket = window.MozWebSocket;
+        }
+        if (window.WebSocket) {
+            socket = new WebSocket("ws://localhost:9199/websocket");
+            socket.onmessage = function (e) {
+                var ta = document.getElementById("responseText");
+                ta.value = "";
+                ta.value = e.data;
+            };
+            socket.onopen = function () {
+                var ta = document.getElementById("responseText");
+                ta.value = "打开websocket";
+            };
+            socket.onclose = function () {
+                var ta = document.getElementById("responseText");
+                ta.value = "关闭websocket";
+            }
+        } else {
+            alert("不支持websocket");
+        }
+        function send(message) {
+            if (!window.WebSocket) {
+                return;
+            }
+            if (socket.readyState == WebSocket.OPEN) {
+                socket.send(message);
+            } else {
+                alert("webSocket未连接成功")
+            }
+        }
+    </script>
+</head>
+<body>
+<br>
+<form onsubmit="return false;">
+    <input type="text" value="netty" name="message">
+    <br>
+    <br>
+    <input type="button" value="发送" onclick="send(this.form.message.value)">
+    <h3>服务器应答消息</h3>
+    <textarea id="responseText" style="width: 500px;height: 500px">
+    </textarea>
+</form>
+</body>
+</html>
