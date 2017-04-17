@@ -7,8 +7,8 @@ import java.util.Scanner;
 public class GenSql {
     public static void main(String[] args) throws Exception {
 
-        File infile = new File("C:\\Users\\peng.zhou1\\Desktop\\飞牛优鲜\\fresh_gift_member.sql");
-        File outfile = new File("C:\\Users\\peng.zhou1\\Desktop\\飞牛优鲜\\fresh_gift_member_all.sql");
+        File infile = new File("resh_gift_member.sql");
+        File outfile = new File("fresh_gift_member_all.sql");
 
         BufferedWriter fileWriter = new BufferedWriter(new OutputStreamWriter(
                 new FileOutputStream(outfile), "UTF-8"));
