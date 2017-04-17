@@ -1,4 +1,4 @@
-package com.micmiu.thrift.demo;
+package thrift.micmiu.thrift.demo;
 
 import org.apache.thrift.protocol.TCompactProtocol;
 import org.apache.thrift.protocol.TProtocol;

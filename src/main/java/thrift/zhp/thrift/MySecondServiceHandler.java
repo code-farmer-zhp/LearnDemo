@@ -1,4 +1,4 @@
-package com.zhp.thrift;
+package thrift.zhp.thrift;
 
 import org.apache.thrift.TException;
 

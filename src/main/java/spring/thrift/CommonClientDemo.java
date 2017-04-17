@@ -1,6 +1,6 @@
 package spring.thrift;
 
-import com.micmiu.thrift.demo.HelloWorldService;
+import thrift.micmiu.thrift.demo.HelloWorldService;
 import org.apache.thrift.TException;
 import org.apache.thrift.protocol.TCompactProtocol;
 import org.apache.thrift.protocol.TMultiplexedProtocol;

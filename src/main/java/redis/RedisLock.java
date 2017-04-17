@@ -72,7 +72,7 @@ public class RedisLock {
 
     public void unlock(String key) {
         String cacheValue = jedisCluster.get(key);
-        //TODO 非原子性的  有风险 可能刚好过期然后造成误删除其他获得锁的value\
+        //TODO 非原子性的  有风险 可能刚好过期然后造成误删除其他获得锁的value
         //可以使用lua脚本解决
         //如果是单台redis 可以使用watch
         if (value.equals(cacheValue)) {

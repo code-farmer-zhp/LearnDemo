@@ -1,4 +1,4 @@
-package com.zhp.thrift;
+package thrift.zhp.thrift;
 
 import org.apache.thrift.protocol.TCompactProtocol;
 import org.apache.thrift.server.TNonblockingServer;

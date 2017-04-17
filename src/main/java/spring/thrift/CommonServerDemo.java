@@ -1,8 +1,8 @@
 package spring.thrift;
 
 
-import com.micmiu.thrift.demo.HelloWorldImpl;
-import com.micmiu.thrift.demo.HelloWorldService;
+import thrift.micmiu.thrift.demo.HelloWorldImpl;
+import thrift.micmiu.thrift.demo.HelloWorldService;
 import org.apache.thrift.TMultiplexedProcessor;
 import org.apache.thrift.TProcessor;
 import org.apache.thrift.protocol.TCompactProtocol;
