@@ -7,8 +7,8 @@ import java.util.Scanner;
 public class GenSql {
     public static void main(String[] args) throws Exception {
 
-        File infile = new File("resh_gift_member.sql");
-        File outfile = new File("fresh_gift_member_all.sql");
+        File infile = new File("D:\\new_gift\\new_gift_member_index.sql");
+        File outfile = new File("D:\\new_gift\\new_gift_member_all_index.sql");
 
         BufferedWriter fileWriter = new BufferedWriter(new OutputStreamWriter(
                 new FileOutputStream(outfile), "UTF-8"));
@@ -21,8 +21,8 @@ public class GenSql {
                 Scanner scanner = new Scanner(inputStream);
                 while (scanner.hasNext()) {
                     String line = scanner.nextLine();
-                    if (line.contains("fresh_gift_member")) {
-                        line = line.replaceAll("fresh_gift_member", "fresh_gift_member" + table);
+                    if (line.contains("new_gift_member")) {
+                        line = line.replaceAll("new_gift_member", "new_gift_member" + table);
                     }
                     fileWriter.write(line);
                     fileWriter.write("\r\n");
